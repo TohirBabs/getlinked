@@ -1,8 +1,22 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+// const clashDisplay = localFont({
+//   src: [
+//     { path: "../../public/fonts/ClashDisplay-Regular.woff2", weight: "400" },
+//     { path: "../../public/fonts/ClashDisplay-Bold.woff2", weight: "700" },
+//   ],
+//   variable: "--clash-display",
+// });
+
+const clashDisplay = localFont({
+  src: "../../public/fonts/ClashDisplay-Variable.ttf",
+  display: "swap",
+  variable: "--font-clash-display",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={`${montserrat.className} ${clashDisplay.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
