@@ -16,6 +16,9 @@ const config: Config = {
       fontFamily: {
         title: ["var(--font-clash-display)"],
       },
+      colors: {
+        "primary-purple": "#150E28",
+      },
     },
   },
   plugins: [],
