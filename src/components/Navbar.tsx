@@ -121,7 +121,7 @@ export default function Navbar() {
   const NavLink = ({ title, href }) => {
     return (
       <motion.div variants={navLinkVariants}>
-        <Link className="capitalize text-lg sm:text-sm textb" href={href}>
+        <Link className="capitalize text-lg lg:text-sm textb" href={href}>
           {title}
         </Link>
       </motion.div>
@@ -135,7 +135,7 @@ export default function Navbar() {
         animate="animate"
         initial="initial"
         exit="exit"
-        className=" origin-top flex sm:hidden  gap-10 text-sm  pl-10 sm:pl-0 bg-primary-purple  h-screen absolute w-screen flex-col left-0 top-0 justify-center"
+        className="z-50 origin-top flex lg:hidden  gap-10 text-sm  pl-10 lg:pl-0 bg-primary-purple  h-screen fixed  w-screen flex-col left-0 top-0 justify-center"
       >
         <motion.ul
           variants={staggerVariants}
@@ -163,7 +163,7 @@ export default function Navbar() {
 
         <div
           onClick={() => setToggleMenu(false)}
-          className=" absolute right-4 top-4 sm:hidden rounded-full p-[2px] bg-gradient-to-r from-[#903AFF] to-[#FF26B9]"
+          className=" absolute right-4 top-4 lg:hidden rounded-full p-[2px] bg-gradient-to-r from-[#903AFF] to-[#FF26B9]"
         >
           <div className="p-2 rounded-full bg-primary-purple">
             <Cancel_icon />
@@ -178,10 +178,10 @@ export default function Navbar() {
       variants={headerVariants}
       initial="hidden"
       whileInView="show"
-      className="px-8 sm:px-16 pt-8 pb-4  border-b border-b-white border-opacity-20 static top-0 backdrop-blur bg-primary-purple bg-opacity-20"
+      className="px-8 lg:px-16 pt-8 pb-4 z-20  border-b border-b-white border-opacity-20 fixed w-full top-0 backdrop-blur bg-primary-purple bg-opacity-20"
     >
       <div className="2xl:max-w-[1280px] w-full mx-auto flex gap-8 justify-between">
-        <div className="w-24 h-5 sm:h-11 sm:w-40 relative">
+        <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
           <Image
             src="/logo.svg"
             alt="GetLinked Logo"
@@ -195,7 +195,7 @@ export default function Navbar() {
           variants={navVariants}
           animate="animate"
           initial="initial"
-          className={`hidden sm:flex-row sm:flex  gap-20 text-sm sm:items-center relative`}
+          className={`hidden lg:flex-row lg:flex  gap-20 text-sm lg:items-center relative`}
         >
           <motion.ul
             variants={staggerVariants}
@@ -221,8 +221,7 @@ export default function Navbar() {
           </motion.ul>
         </motion.nav>
         <AnimatePresence>{toggleMenu && <MobileMenu />}</AnimatePresence>
-
-        <div onClick={() => setToggleMenu(true)} className="sm:hidden">
+        <div onClick={() => setToggleMenu(true)} className="lg:hidden">
           <Hamburger_icon />
         </div>
       </div>
