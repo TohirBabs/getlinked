@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -52,14 +51,9 @@ export default function Hero() {
               a Big prize
             </p>
             <div className="overflow-hidden">
-              <motion.button
-                variants={navLinkVariants}
-                initial="initial"
-                animate="open"
-                className="capitalize relative py-3 px-12 btn-grad rounded-md w-max"
-              >
+              <button className="capitalize relative py-3 px-12 btn-grad rounded-md w-max">
                 register
-              </motion.button>
+              </button>
             </div>
             <div className="flex gap-8 uppercase font-unicaOne lg:pt-10 ">
               <div className="flex items-end">

@@ -1,5 +1,6 @@
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 import Register from "@/components/Register";
 import Faqs from "@/sections/Faq";
 import Footer from "@/sections/Footer";
