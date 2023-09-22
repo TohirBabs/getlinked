@@ -14,7 +14,11 @@ import Rewards from "@/sections/Rewards";
 import Rules from "@/sections/Rules";
 import Timeline from "@/sections/Timeline";
 import Partners from "@/sections/partners";
-import AnimatedCursor from "react-animated-cursor";
+import dynamic from "next/dynamic";
+
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
