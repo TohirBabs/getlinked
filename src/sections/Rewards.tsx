@@ -16,18 +16,18 @@ const Rewards = () => {
         </div>
         <div className="flex-1 p-4">
           <div className="pb-4">
-            <Reveal>
+            <Reveal width="100%">
               <h2 className="font-title font-semibold text-2xl lg:text-4xl">
                 Prizes and
               </h2>
             </Reveal>
-            <Reveal>
+            <Reveal width="100%">
               <h2 className="font-title font-semibold text-2xl lg:text-4xl text-[#D434FE]">
                 Rewards
               </h2>
             </Reveal>
           </div>
-          <Reveal>
+          <Reveal width="100%">
             <p className="text-xs leading-6">
               Highlight of the prizes or rewards for winners and for
               participants.
