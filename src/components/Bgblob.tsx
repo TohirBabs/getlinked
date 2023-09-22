@@ -10,7 +10,10 @@ const Bgblob = () => {
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 2], ["0%", "-100%"]);
   return (
-    <motion.div style={{ y }} className="h-[200vh] w-screen fixed top-0 z-0">
+    <motion.div
+      style={{ y }}
+      className="lg:h-[200vh] h-[150vh] w-screen fixed top-0 z-0"
+    >
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -21,7 +24,7 @@ const Bgblob = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, ease: "easeIn", duration: 1 }}
-        className="lg:w-[1000px] w-[400px] blur-lg rounded-full lg:h-[1000px] h-[400px] bg-gradient-radial from-[#430980] via-primary-purple  to-primary-purple absolute  -right-[100px] lg:first-letter:-right-[100px] -bottom-[10vh]"
+        className="lg:w-[1000px] w-[400px] blur-lg rounded-full lg:h-[1000px] h-[400px] bg-gradient-radial from-[#430980] via-primary-purple  to-primary-purple absolute  -right-[100px] lg:first-letter:-right-[100px] bottom-0 lg:-bottom-[20vh]"
       ></motion.div>
     </motion.div>
   );
