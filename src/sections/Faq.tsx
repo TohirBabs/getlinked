@@ -41,7 +41,9 @@ const Faqs = () => {
                 Can I work on a project I started before the hackathon?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Yes, you can enter the hackathon with a previous project you
+                have in devevlopment, but you will have to re-initialize the
+                project on the hackathon platform.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -49,7 +51,8 @@ const Faqs = () => {
                 What happens if I need help during the hackathon?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Feel free to call the atention of any of our senior developers
+                that will be casually roaming during the hackathon
               </AccordionContent>
             </AccordionItem>{" "}
             <AccordionItem value="item-3">
@@ -57,7 +60,8 @@ const Faqs = () => {
                 What happens if I don&#39;t have an idea for a project?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                No pressure, you can join other people who have ideas to form a
+                team and work on the project together
               </AccordionContent>
             </AccordionItem>{" "}
             <AccordionItem value="item-4">
@@ -65,7 +69,8 @@ const Faqs = () => {
                 Can I join a team or do I have to come with one?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                You have the freedom to join whichever team you want, or form
+                one yourself
               </AccordionContent>
             </AccordionItem>{" "}
             <AccordionItem value="item-5">
@@ -73,15 +78,8 @@ const Faqs = () => {
                 What happens after the hackathon ends
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-6">
-              <AccordionTrigger>
-                Can I work on a project I started before the hackathon?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                We will be evaluation the projects submitted and we will get
+                back to you in 2 weeks about the winners
               </AccordionContent>
             </AccordionItem>
           </Accordion>
