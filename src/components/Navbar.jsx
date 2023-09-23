@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "./ui/button";
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -18,6 +19,7 @@ export default function Navbar() {
     exit: {
       x: "100vw",
       transition: {
+        ease: "ease-in",
         delay: 0.5,
       },
     },
@@ -59,9 +61,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { title: "timeline", href: "#" },
-    { title: "overview", href: "#" },
-    { title: "FAQs", href: "#" },
+    { title: "timeline", href: "#timeline" },
+    { title: "overview", href: "#introduction" },
+    { title: "FAQs", href: "#faqs" },
     { title: "contact", href: "contact" },
   ];
 
@@ -124,11 +126,7 @@ export default function Navbar() {
   };
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="px-8 lg:px-16 pt-8 pb-4 z-20  border-b border-b-white border-opacity-20 fixed w-full top-0 backdrop-blur bg-primary-purple bg-opacity-20"
-    >
+    <header className="px-8 lg:px-16 pt-8 pb-4 z-20  border-b border-b-white border-opacity-20 fixed w-full top-0 backdrop-blur bg-primary-purple bg-opacity-20">
       <div className="2xl:max-w-[1280px] w-full mx-auto flex gap-8 justify-between">
         <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
           <Image
@@ -140,13 +138,10 @@ export default function Navbar() {
           />
         </div>
 
-        <motion.nav
-          variants={navVariants}
-          animate="animate"
-          initial="initial"
+        <nav
           className={`hidden lg:flex-row lg:flex  gap-20 text-sm lg:items-center relative`}
         >
-          <motion.ul
+          <ul
             variants={staggerVariants}
             initial="initial"
             animate="open"
@@ -159,21 +154,16 @@ export default function Navbar() {
                 </li>
               );
             })}
-            <div className="overflow-hidden">
-              <motion.button
-                variants={navLinkVariants}
-                className="capitalize relative py-3 px-12 btn-grad rounded-md w-max"
-              >
-                register
-              </motion.button>
-            </div>
-          </motion.ul>
-        </motion.nav>
+            <Link href="/register">
+              <Button className="capitalize relative">register</Button>
+            </Link>
+          </ul>
+        </nav>
         <AnimatePresence>{toggleMenu && <MobileMenu />}</AnimatePresence>
         <div onClick={() => setToggleMenu(true)} className="lg:hidden">
           <Menu_icon />
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }

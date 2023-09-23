@@ -35,30 +35,48 @@ import { RadioGroupItem } from "@/components/ui/radio-group";
 import { log } from "console";
 
 const FormSchema = z.object({
-  teamname: z.string().min(2, {
-    message: "Team's name must be at least 2 characters.",
-  }),
+  teamname: z
+    .string()
+    .min(2, {
+      message: "Team's name must be at least 2 characters.",
+    })
+    .max(15, {
+      message: "Team's name must not be more than 15 characters.",
+    }),
 
   email: z
     .string({
       required_error: "Please select an email to display.",
     })
     .email(),
-  phone: z.string(),
+  phone: z
+    .string()
+    .min(8, {
+      message: "Phone number is too short",
+    })
+    .max(14, {
+      message: "TPhone number is too long.",
+    }),
 
-  topic: z.string(),
-  category: z.string(),
-  size: z.string(),
+  topic: z.string().min(2, {
+    message: "Invalid Topic",
+  }),
+  category: z.string().length(1, {
+    message: "pick a category",
+  }),
+  size: z.string().length(1, {
+    message: "select your group size",
+  }),
+  privacy: z.string(),
 });
 
 interface Props {
   categories: { id: number; name: string }[];
-  openModal: Dispatch<SetStateAction<boolean>>;
 }
 
-const RegistrationForm = ({ categories, openModal }: Props) => {
+const RegistrationForm = ({ categories }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [modal, setModal] = useState(false);
+  const [registered, setRegistered] = useState(null);
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -69,6 +87,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
       topic: "",
       category: "",
       size: "",
+      privacy: "",
     },
   });
   const register = async (data: z.infer<typeof FormSchema>) => {
@@ -81,7 +100,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
       group_size: parseInt(data.size),
       project_topic: data.topic,
       category: parseInt(data.category),
-      privacy_poclicy_accepted: true,
+      privacy_poclicy_accepted: data.privacy === "agree",
     };
     console.log(raw);
 
@@ -96,11 +115,14 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
       );
       const result = await res
         .json()
-        .then((result) => console.log(result))
-        .then((result) => setModal(true))
+        .then((result) => setRegistered(result.id))
         .then((result) => setLoading(false));
     } catch (err) {
       console.log(err);
+      toast({
+        title: "Registration Failed",
+        description: "",
+      });
       setLoading(false);
     }
   };
@@ -112,9 +134,31 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
 
   const Modal = () => {
     return (
-      <div className="absolute z-20 flex items-center justify-center h-screen w-screen overflow-hidden bg-primary-purple/70">
-        <div className="">
-          <Button onClick={() => setModal(false)} className="w-full">
+      <div className="absolute  flex items-center justify-center h-screen w-screen overflow-hidden p-4 bg-primary-purple/80 backdrop-blur-sm -top-[94px] z-50">
+        <div className="border p-4 lg:p-10 border-[#D434FE] rounded max-w-xl relative">
+          <div className=" w-full lg:h-[300px] h-[200px] pb-8  relative">
+            <Image
+              src="/congratulation.svg"
+              alt="GetLinked Logo"
+              fill
+              objectFit="contain"
+              priority
+            />
+          </div>
+          <div className="flex-1 p-4 text-center">
+            <div className="pb-4">
+              <h2 className="text-xl lg:text-2xl font-semibold">
+                Congratulations
+              </h2>
+              <h2 className="text-xl lg:text-2xl font-semibold">
+                you have successfully Registered!
+              </h2>
+            </div>
+            <p className="text-xs leading-6  lg:w-[60%] mx-auto">
+              Yes, it was easy and you did it! check your mail box for next step
+            </p>
+          </div>
+          <Button onClick={() => setRegistered(null)} className="w-full">
             Back
           </Button>
         </div>
@@ -123,8 +167,8 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
   };
   return (
     <div className="h-full relative  lg:px-6 border-b border-b-white border-opacity-20 flex-1">
-      {modal && <Modal />}
-      <div className="2xl:max-w-[1280px] w-full mx-auto my-auto flex flex-col  items-center mt-8 justify-center lg:justify-end gap-10 lg:gap-2 text-sm lg:flex-row p-3  ">
+      {registered && <Modal />}
+      <div className="2xl:max-w-[1280px] w-full mx-auto my-auto flex flex-col  items-center mt-2 justify-center lg:justify-end gap-10 lg:gap-2 text-sm lg:flex-row p-3  ">
         <div className="lg:w-[70%] w-full lg:h-[800px] h-[300px]  lg:-left-12 lg:-top-8 relative lg:absolute">
           <Image
             src="/3d-graphic-designer-showing-thumbs-up.svg"
@@ -133,11 +177,11 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
             objectFit="contain"
           />
         </div>
-        <div className="lg:p-10 p-4 lg:w-[700px] lg:border-white lg:border rounded lg:border-opacity-5 lg:backdrop-blur lg:bg-white/5 max-w-xl  gap-4 flex flex-col flex-1">
+        <div className="lg:p-8 p-4 lg:w-[700px] lg:border-white lg:border rounded lg:border-opacity-5 lg:backdrop-blur lg:bg-white/5 max-w-xl  gap-3 flex flex-col flex-1">
           <h3 className="font-title font-bold text-2xl text-[#D434FE]">
             Register
           </h3>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-3 items-center">
             <p>Be part of this movement!</p>
             <p className="-scale-x-100 text-2xl">🚶🏻‍♂️ 🚶🏻‍♀️</p>
           </div>
@@ -145,7 +189,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full flex flex-wrap justify-between gap-5"
+              className="w-full flex flex-wrap justify-between gap-4"
             >
               <FormField
                 control={form.control}
@@ -158,6 +202,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                         type="text"
                         placeholder="Enter your Team's Name"
                         {...field}
+                        required
                       />
                     </FormControl>
                     <FormMessage />
@@ -176,6 +221,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                         type="phone"
                         placeholder="Enter your phone number"
                         {...field}
+                        required
                       />
                     </FormControl>
                     <FormMessage />
@@ -194,6 +240,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                         type="email"
                         placeholder="Enter your Email address"
                         {...field}
+                        required
                       />
                     </FormControl>
                     <FormMessage />
@@ -211,6 +258,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                       <Input
                         placeholder="What is your group project topic"
                         {...field}
+                        required
                       />
                     </FormControl>
                     <FormMessage />
@@ -226,6 +274,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
+                      required
                     >
                       <FormControl>
                         <SelectTrigger>
@@ -257,6 +306,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
+                      required
                     >
                       <FormControl>
                         <SelectTrigger>
@@ -283,7 +333,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
               </p>
               <FormField
                 control={form.control}
-                name="type"
+                name="privacy"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
                     <FormControl>
@@ -291,6 +341,7 @@ const RegistrationForm = ({ categories, openModal }: Props) => {
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                         className="flex flex-col "
+                        required
                       >
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
