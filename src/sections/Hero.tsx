@@ -62,7 +62,7 @@ export default function Hero() {
               </button>
             </Reveal>
             <Countdown
-              date={new Date(2023, 8, 26)}
+              date={new Date(2023, 11, 18)}
               renderer={({ hours, minutes, seconds }) => (
                 <Reveal>
                   <div className="flex gap-8 uppercase font-unicaOne lg:pt-10 ">
