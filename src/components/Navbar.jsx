@@ -15,11 +15,14 @@ export default function Navbar() {
     },
     animate: {
       x: 0,
+      transition: {
+        ease: "easeIn",
+      },
     },
     exit: {
       x: "100vw",
       transition: {
-        ease: "ease-in",
+        ease: "easeIn",
         delay: 0.5,
       },
     },
@@ -69,7 +72,10 @@ export default function Navbar() {
 
   const NavLink = ({ title, href }) => {
     return (
-      <motion.div variants={navLinkVariants}>
+      <motion.div
+        variants={navLinkVariants}
+        onClick={() => setToggleMenu(false)}
+      >
         <Link
           className="capitalize text-sm lg:text-sm hover:text-[#FF26B9] transition-colors"
           href={href}
@@ -103,13 +109,15 @@ export default function Navbar() {
               </li>
             );
           })}
-          <div className="overflow-hidden">
-            <motion.button
-              variants={navLinkVariants}
-              className="capitalize relative py-3 px-12 btn-grad  rounded-md w-max"
-            >
-              register
-            </motion.button>
+          <div onClick={() => setToggleMenu(false)} className="overflow-hidden">
+            <Link href="register">
+              <motion.button
+                variants={navLinkVariants}
+                className="capitalize relative py-3 px-12 btn-grad  rounded-md w-max"
+              >
+                register
+              </motion.button>
+            </Link>
           </div>
         </motion.ul>
 

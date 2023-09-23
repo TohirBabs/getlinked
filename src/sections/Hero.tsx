@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className="relative lg:-top-[96px]  h-screen flex-col flex  w-full overflow-hidden">
       <div className="p-2 lg:px-16 z-10 min-h-[55vh] relative flex-1  flex flex-col items-start lg:justify-center  w-full border-b border-b-white border-opacity-20 ">
-        <div className="italic relative font-semibold lg:text-[1.7rem] text-center lg:absolute lg:right-20 lg:top-[6.5rem] w-full top-4">
+        <div className="italic relative font-semibold lg:text-[1.7rem] text-center lg:absolute lg:right-20 lg:top-[6.5rem] w-full top-4 lg:text-right">
           <Typewriter
             options={{
               strings: "Igniting a Revolution in HR Innovation",
@@ -29,54 +29,51 @@ export default function Hero() {
         </div>
         <div className="2xl:max-w-[1280px] w-full mx-auto">
           <div className="lg:w-[60%] flex flex-col items-center text-center lg:text-left lg:items-start gap-6 ">
-            <Reveal width="100%">
-              <div className="text-4xl flex flex-col gap-2 font-semibold font-title lg:text-7xl">
-                <div className="flex relative lg:justify-start justify-center lg:pt-20 pt-12">
-                  <h2 className=" ">getlinked Tech</h2>
+            <div className="text-4xl flex flex-col gap-2 font-semibold font-title lg:text-7xl">
+              <div className="flex relative lg:justify-start justify-center lg:pt-20 pt-12">
+                <h2 className=" ">getlinked Tech</h2>
 
-                  <div className="w-10 h-10 lg:w-20 lg:h-20  absolute lg:bottom-12 bottom-6 lg:right-40 right-10">
-                    <Image
-                      src="/bulb.svg"
-                      alt="bulb outline"
-                      fill
-                      objectFit="contain"
-                    />
-                  </div>
-                </div>
-                <div className=" relative lg:justify-start justify-center flex gap-1">
-                  <h2 className="font-title lg:text-7xl">
-                    Hackathon <span className="text-[#D434FE]">1.0</span>
-                  </h2>
-
-                  <div className="w-10 h-10 lg:w-20 lg:h-20  relative">
-                    <Image
-                      src="/chain.svg"
-                      alt="GetLinked Logo"
-                      fill
-                      objectFit="contain"
-                    />
-                  </div>
-                  <div className="w-10 h-10 lg:w-20 lg:h-20  relative">
-                    <Image
-                      src="/explosion.svg"
-                      alt="GetLinked Logo"
-                      fill
-                      objectFit="contain"
-                    />
-                  </div>
+                <div className="w-10 h-10 lg:w-20 lg:h-20  absolute lg:bottom-12 bottom-6 lg:right-40 right-10">
+                  <Image
+                    src="/bulb.svg"
+                    alt="bulb outline"
+                    fill
+                    objectFit="contain"
+                  />
                 </div>
               </div>
-            </Reveal>
-            <Reveal width="100%">
-              <div className="w-full gap-4 flex flex-col">
-                <p className="lg:w-[55%] px-10  lg:px-0 text-xs lg:text-base">
-                  Participate in getlinked tech Hackathon 2023 stand a chance to
-                  win a Big prize
-                </p>
-                {/* <div className="flex"></div> */}
-                <Button className="w-max mx-auto">register</Button>
+              <div className=" relative lg:justify-start justify-center flex gap-1">
+                <h2 className="font-title lg:text-7xl">
+                  Hackathon <span className="text-[#D434FE]">1.0</span>
+                </h2>
+
+                <div className="w-10 h-10 lg:w-20 lg:h-20  relative">
+                  <Image
+                    src="/chain.svg"
+                    alt="GetLinked Logo"
+                    fill
+                    objectFit="contain"
+                  />
+                </div>
+                <div className="w-10 h-10 lg:w-20 lg:h-20  relative">
+                  <Image
+                    src="/explosion.svg"
+                    alt="GetLinked Logo"
+                    fill
+                    objectFit="contain"
+                  />
+                </div>
               </div>
-            </Reveal>
+            </div>
+
+            <div className="w-full gap-4 flex flex-col">
+              <p className="lg:w-[55%] px-10  lg:px-0 text-xs lg:text-base">
+                Participate in getlinked tech Hackathon 2023 stand a chance to
+                win a Big prize
+              </p>
+              {/* <div className="flex"></div> */}
+              <Button className="w-max mx-auto lg:mx-0">register</Button>
+            </div>
 
             <Countdown
               date={new Date(2023, 11, 18)}

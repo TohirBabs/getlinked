@@ -18,28 +18,28 @@ const Rules = () => {
           />
         </div>
         <div className="flex-1 p-4">
-          <div className="pb-4">
-            <Reveal width="100%">
-              <h2 className="font-title font-semibold text-2xl lg:text-4xl">
-                Rules and
-              </h2>
-            </Reveal>
-            <Reveal width="100%">
-              <h2 className="font-title font-semibold text-2xl lg:text-4xl text-[#D434FE]">
-                Guidelines
-              </h2>
-            </Reveal>
-          </div>
           <Reveal width="100%">
-            <p className="text-xs leading-6 pb-8">
-              Our tech hackathon is a melting pot of visionaries, and its
-              purpose is as clear as day: to shape the future. Whether you're a
-              coding genius, a design maverick, or a concept wizard, you'll have
-              the chance to transform your ideas into reality. Solving
-              real-world problems, pushing the boundaries of technology, and
-              creating solutions that can change the world, that's what we're
-              all about!
-            </p>
+            <>
+              <div className="pb-4">
+                <h2 className="font-title font-semibold text-2xl lg:text-4xl">
+                  Rules and
+                </h2>
+
+                <h2 className="font-title font-semibold text-2xl lg:text-4xl text-[#D434FE]">
+                  Guidelines
+                </h2>
+              </div>
+
+              <p className="text-xs leading-6 pb-8">
+                Our tech hackathon is a melting pot of visionaries, and its
+                purpose is as clear as day: to shape the future. Whether you're
+                a coding genius, a design maverick, or a concept wizard, you'll
+                have the chance to transform your ideas into reality. Solving
+                real-world problems, pushing the boundaries of technology, and
+                creating solutions that can change the world, that's what we're
+                all about!
+              </p>
+            </>
           </Reveal>
         </div>
       </div>

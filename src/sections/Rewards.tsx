@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/Reveal";
 import Image from "next/image";
 import React from "react";
 
@@ -16,23 +15,18 @@ const Rewards = () => {
         </div>
         <div className="flex-1 p-4">
           <div className="pb-4">
-            <Reveal width="100%">
-              <h2 className="font-title font-semibold text-2xl lg:text-4xl">
-                Prizes and
-              </h2>
-            </Reveal>
-            <Reveal width="100%">
-              <h2 className="font-title font-semibold text-2xl lg:text-4xl text-[#D434FE]">
-                Rewards
-              </h2>
-            </Reveal>
+            <h2 className="font-title font-semibold text-2xl lg:text-4xl">
+              Prizes and
+            </h2>
+
+            <h2 className="font-title font-semibold text-2xl lg:text-4xl text-[#D434FE]">
+              Rewards
+            </h2>
           </div>
-          <Reveal width="100%">
-            <p className="text-xs leading-6">
-              Highlight of the prizes or rewards for winners and for
-              participants.
-            </p>
-          </Reveal>
+          <p className="text-xs leading-6">
+            Highlight of the prizes or rewards for winners and for participants.
+          </p>
+
           <div className=" w-full lg:h-[500px] h-[300px]  relative  pb-8">
             <Image
               src="/position.svg"
