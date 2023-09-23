@@ -64,10 +64,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { title: "timeline", href: "#timeline" },
-    { title: "overview", href: "#introduction" },
-    { title: "FAQs", href: "#faqs" },
-    { title: "contact", href: "contact" },
+    { title: "timeline", href: "/#timeline" },
+    { title: "overview", href: "/#introduction" },
+    { title: "FAQs", href: "/#faqs" },
+    { title: "contact", href: "/contact" },
   ];
 
   const NavLink = ({ title, href }) => {
