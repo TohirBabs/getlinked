@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -6,15 +7,17 @@ const Footer = () => {
     <div className="px-8 lg:px-16 py-20 bg-opacity-50 relative pb-4 bg-[#100B20]">
       <div className="2xl:max-w-[1280px] w-full mx-auto flex flex-col lg:flex-row gap-8 justify-around">
         <div className="flex flex-col gap-6 max-w-[400px]">
-          <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
-            <Image
-              src="/logo.svg"
-              alt="GetLinked Logo"
-              fill
-              objectFit="contain"
-              priority
-            />
-          </div>
+          <Link href="/">
+            <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
+              <Image
+                src="/logo.svg"
+                alt="GetLinked Logo"
+                fill
+                objectFit="contain"
+                priority
+              />
+            </div>
+          </Link>
 
           <p className="text-xs leading-6">
             Getlinked Tech Hackathon is a technology innovation program
@@ -27,46 +30,46 @@ const Footer = () => {
 
             <p className="text-lg text-[#D434FE]">|</p>
 
-            <p>Privacy</p>
+            <Link href="/#privacy">Privacy</Link>
           </div>
         </div>
         <div className="flex flex-col text-xs gap-6 max-w-[400px]">
           <p className="text-sm font-semibold text-[#D434FE]">Useful Links</p>
-
-          <p>Overview</p>
-
-          <p>Timeline</p>
-
-          <p>FAQs</p>
-
-          <p>Register</p>
-
+          <Link href="/#introduction">Overview</Link>
+          <Link href="/#timeline">Timeline</Link>
+          <Link href="/#faqs">FAQs</Link> <Link href="/register">Register</Link>
           <div className="flex gap-4 items-center">
             <p className="text-[#D434FE] ">Follow Us</p>
-            <Image
-              src="/instagram_icon.svg"
-              width={25}
-              height={25}
-              alt="GetLinked Logo"
-            />
-            <Image
-              src="/x_icon.svg"
-              width={25}
-              height={25}
-              alt="GetLinked Logo"
-            />{" "}
+            <a href="/">
+              <Image
+                src="/insta.svg"
+                width={25}
+                height={25}
+                alt="Getaed Logo"
+              />
+            </a>
+            <a href="https://twitter.com/BabsTohir">
+              <Image
+                src="/x_icon.svg"
+                width={25}
+                height={25}
+                alt="GetLinked Logo"
+              />
+            </a>
             <Image
               src="/facebook_icon.svg"
               width={13}
               height={25}
               alt="GetLinked Logo"
-            />{" "}
-            <Image
-              src="/linkedin_icon.svg"
-              width={25}
-              height={25}
-              alt="GetLinked Logo"
             />
+            <a href="https://www.linkedin.com/in/tohir-babs-6a0045167/">
+              <Image
+                src="/linkedin_icon.svg"
+                width={25}
+                height={25}
+                alt="GetLinked Logo"
+              />
+            </a>
           </div>
         </div>
         <div className="flex flex-col text-xs gap-6 max-w-[400px]">

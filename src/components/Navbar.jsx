@@ -136,15 +136,17 @@ export default function Navbar() {
   return (
     <header className="px-8 lg:px-16 pt-8 pb-4 z-20  border-b border-b-white border-opacity-20 fixed w-full top-0 backdrop-blur bg-primary-purple bg-opacity-20">
       <div className="2xl:max-w-[1280px] w-full mx-auto flex gap-8 justify-between">
-        <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
-          <Image
-            src="/logo.svg"
-            alt="GetLinked Logo"
-            fill
-            objectFit="contain"
-            priority
-          />
-        </div>
+        <Link href="/">
+          <div className="w-24 h-5 lg:h-11 lg:w-40 relative">
+            <Image
+              src="/logo.svg"
+              alt="GetLinked Logo"
+              fill
+              objectFit="contain"
+              priority
+            />
+          </div>
+        </Link>
 
         <nav
           className={`hidden lg:flex-row lg:flex  gap-20 text-sm lg:items-center relative`}

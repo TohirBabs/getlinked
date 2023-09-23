@@ -3,7 +3,10 @@ import React from "react";
 
 const Privacy = () => {
   return (
-    <div className="px-4 lg:px-10 py-4 pt-8 w-full relative  border-b border-b-white border-opacity-20">
+    <div
+      id="privacy"
+      className="px-4 lg:px-10 py-4 pt-8 w-full relative  border-b border-b-white border-opacity-20"
+    >
       <div className=" 2xl:max-w-[1280px] w-full mx-auto justify-center items-center flex flex-col lg:flex-row lg:px-10  lg:gap-16  text-center lg:text-left">
         <div className="flex-1 p-4">
           <div className="pb-4">
