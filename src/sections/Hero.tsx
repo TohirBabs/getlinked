@@ -7,7 +7,7 @@ import Countdown from "react-countdown";
 export default function Hero() {
   return (
     <div className="relative h-screen flex-col flex  w-full overflow-hidden">
-      <div className="p-2 lg:px-16 z-10  relative flex-1  flex flex-col items-start lg:justify-center mt-20 w-full border-b border-b-white border-opacity-20 ">
+      <div className="p-2 lg:px-16 z-10  relative flex-1  flex flex-col items-start lg:justify-center  w-full border-b border-b-white border-opacity-20 ">
         <div className="2xl:max-w-[1280px] w-full mx-auto">
           <div className="lg:w-[60%] flex flex-col items-center text-center lg:text-left lg:items-start gap-6">
             <div className="text-4xl flex flex-col gap-2 font-semibold font-title lg:text-7xl">

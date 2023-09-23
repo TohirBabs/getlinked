@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/Reveal";
 import Image from "next/image";
-import React from "react";
 import {
   Accordion,
   AccordionContent,

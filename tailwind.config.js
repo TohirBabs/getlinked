@@ -40,6 +40,7 @@ module.exports = {
       },
       fontFamily: {
         title: ["var(--font-clash-display)"],
+        body: ["var(--font-montserrat)"],
         unicaOne: ["var(--font-unica-one)"],
       },
       colors: {

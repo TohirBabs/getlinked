@@ -62,7 +62,7 @@ export default function Navbar() {
     { title: "timeline", href: "#" },
     { title: "overview", href: "#" },
     { title: "FAQs", href: "#" },
-    { title: "contact", href: "#" },
+    { title: "contact", href: "contact" },
   ];
 
   const NavLink = ({ title, href }) => {
