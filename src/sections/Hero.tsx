@@ -71,7 +71,7 @@ export default function Hero() {
                 win a Big prize
               </p>
               {/* <div className="flex"></div> */}
-              <Button className="w-max mx-auto lg:mx-0">register</Button>
+              <Button className="w-max mx-auto lg:mx-0">Register</Button>
             </div>
 
             <Countdown
