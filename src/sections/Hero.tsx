@@ -1,5 +1,4 @@
 "use client";
-import { Reveal } from "@/components/Reveal";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import Countdown from "react-countdown";
@@ -78,22 +77,20 @@ export default function Hero() {
             <Countdown
               date={new Date(2023, 11, 18)}
               renderer={({ hours, minutes, seconds }) => (
-                <Reveal>
-                  <div className="flex gap-8 uppercase font-unicaOne lg:pt-10 ">
-                    <div className="flex items-end">
-                      <p className="text-5xl lg:text-6xl">{hours}</p>
-                      <span className="leading-10">h</span>
-                    </div>
-                    <div className="flex items-end">
-                      <p className="text-5xl lg:text-6xl">{minutes}</p>
-                      <span className="leading-10">m</span>
-                    </div>
-                    <div className="flex items-end">
-                      <p className="text-5xl lg:text-6xl">{seconds}</p>
-                      <span className="leading-10">s</span>
-                    </div>
+                <div className="flex gap-8 uppercase font-unicaOne lg:pt-10 ">
+                  <div className="flex items-end">
+                    <p className="text-5xl lg:text-6xl">{hours}</p>
+                    <span className="leading-10">h</span>
                   </div>
-                </Reveal>
+                  <div className="flex items-end">
+                    <p className="text-5xl lg:text-6xl">{minutes}</p>
+                    <span className="leading-10">m</span>
+                  </div>
+                  <div className="flex items-end">
+                    <p className="text-5xl lg:text-6xl">{seconds}</p>
+                    <span className="leading-10">s</span>
+                  </div>
+                </div>
               )}
             />
           </div>

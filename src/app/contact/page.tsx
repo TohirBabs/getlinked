@@ -21,16 +21,29 @@ import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 
 const FormSchema = z.object({
-  teamname: z.string().min(2, {
+  name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
   message: z
     .string()
     .min(10, {
-      message: "Bio must be at least 10 characters.",
+      message: "message must be at least 10 characters.",
     })
     .max(160, {
-      message: "Bio must not be longer than 30 characters.",
+      message: "message must not be longer than 30 characters.",
+    }),
+  email: z
+    .string({
+      required_error: "Please select an email to display.",
+    })
+    .email(),
+  phone: z
+    .string()
+    .min(8, {
+      message: "Phone number is too short",
+    })
+    .max(14, {
+      message: "TPhone number is too long.",
     }),
 });
 
@@ -60,37 +73,26 @@ const Contact = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full space-y-6"
+              className="w-full flex flex-wrap justify-between gap-4"
             >
               <FormField
                 control={form.control}
-                name="teamname"
+                name="name"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="w-full">
                     <FormControl>
-                      <Input placeholder="Teams's Name" {...field} />
+                      <Input placeholder="First name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="topic"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input placeholder="Topic" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="lg:w-[48%] w-full">
                     <FormControl>
                       <Input type="email" placeholder="Email" {...field} />
                     </FormControl>
@@ -100,9 +102,26 @@ const Contact = () => {
               />
               <FormField
                 control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem className="lg:w-[48%] w-full">
+                    <FormControl>
+                      <Input
+                        type="phone"
+                        placeholder="Enter your phone number"
+                        {...field}
+                        required
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
                 name="message"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="w-full">
                     <FormControl>
                       <Textarea
                         placeholder="Write a message to us"
