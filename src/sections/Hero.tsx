@@ -120,6 +120,7 @@ export default function Hero() {
                 src="/nodeweb.svg"
                 alt="GetLinked Logo"
                 fill
+                priority
               />
             </div>
           </div>

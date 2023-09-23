@@ -17,6 +17,7 @@ const Introduction = () => {
             alt="idea illustration"
             className="object-contain"
             fill
+            priority
           />
         </div>
         <div className="flex-1 p-4">
