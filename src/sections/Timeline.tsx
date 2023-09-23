@@ -11,18 +11,15 @@ const Timeline = () => {
       <div className=" 2xl:max-w-[1280px] w-full mx-auto justify-center items-center flex flex-col  lg:px-10  lg:gap-8  text-center">
         <div className="flex-1 p-4 pb-8">
           <div className="pb-4">
-            <Reveal width="100%">
-              <h2 className="font-title font-semibold text-2xl lg:text-4xl">
-                Timeline
-              </h2>
-            </Reveal>
+            <h2 className="font-title font-semibold text-2xl lg:text-4xl">
+              Timeline
+            </h2>
           </div>
-          <Reveal>
-            <p className="text-xs leading-6  lg:w-[70%] mx-auto">
-              Here is the breakdown of the time we anticipate using for the
-              upcoming event.
-            </p>
-          </Reveal>
+
+          <p className="text-xs leading-6  lg:w-[70%] mx-auto">
+            Here is the breakdown of the time we anticipate using for the
+            upcoming event.
+          </p>
         </div>
         <Reveal width="100%">
           <div className="relative lg:py-16 px-4 gap-10 flex flex-col">
