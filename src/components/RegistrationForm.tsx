@@ -131,7 +131,7 @@ const RegistrationForm = ({ categories }: Props) => {
 
   const Modal = () => {
     return (
-      <div className="absolute  flex items-center justify-center h-screen w-screen overflow-hidden p-4 bg-primary-purple/80 backdrop-blur-sm -top-[94px] z-50">
+      <div className="fixed  flex items-center justify-center h-screen w-screen overflow-hidden p-4 bg-primary-purple/80 backdrop-blur-sm lg:-top-[94px]  z-50">
         <div className="border p-4 lg:p-10 border-[#D434FE] rounded max-w-xl relative">
           <div className=" w-full lg:h-[300px] h-[200px] pb-8  relative">
             <Image
@@ -164,7 +164,7 @@ const RegistrationForm = ({ categories }: Props) => {
   };
   return (
     <div className="h-full relative  lg:px-6 border-b border-b-white border-opacity-20 flex-1">
-      {registered && <Modal />}
+      {true && <Modal />}
       <div className="2xl:max-w-[1280px] w-full mx-auto my-auto flex flex-col  items-center mt-2 justify-center lg:justify-end gap-10 lg:gap-2 text-sm lg:flex-row p-3  ">
         <div className="lg:w-[70%] w-full lg:h-[800px] h-[300px]  lg:-left-12 lg:-top-8 relative lg:absolute">
           <Image
