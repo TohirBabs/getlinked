@@ -164,7 +164,7 @@ const RegistrationForm = ({ categories }: Props) => {
   };
   return (
     <div className="h-full relative  lg:px-6 border-b border-b-white border-opacity-20 flex-1">
-      {true && <Modal />}
+      {registered && <Modal />}
       <div className="2xl:max-w-[1280px] w-full mx-auto my-auto flex flex-col  items-center mt-2 justify-center lg:justify-end gap-10 lg:gap-2 text-sm lg:flex-row p-3  ">
         <div className="lg:w-[70%] w-full lg:h-[800px] h-[300px]  lg:-left-12 lg:-top-8 relative lg:absolute">
           <Image
