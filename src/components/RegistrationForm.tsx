@@ -131,7 +131,7 @@ const RegistrationForm = ({ categories }: Props) => {
 
   const Modal = () => {
     return (
-      <div className="fixed  flex items-center justify-center h-screen w-screen overflow-hidden p-4 bg-primary-purple/80 backdrop-blur-sm lg:-top-[94px]  z-50">
+      <div className="fixed  flex items-center justify-center h-[110vh] w-screen overflow-hidden p-4 bg-primary-purple/80 backdrop-blur-sm lg:-top-[94px] -top-[63px]  z-50">
         <div className="border p-4 lg:p-10 border-[#D434FE] rounded max-w-xl relative">
           <div className=" w-full lg:h-[300px] h-[200px] pb-8  relative">
             <Image
